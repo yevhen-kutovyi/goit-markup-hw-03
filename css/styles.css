@@ -9,19 +9,43 @@
   --primary-background-color: #ffffff;
   --secondary-background-color: #2f303a;
   --additional-background-color: #f5f4fa;
+  --primary-border-color: #ececec;
+  --secondary-border-color: #eeeeee;
 }
 body {
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
+
+  width: 1600px;
+  margin: 0 auto;
+}
+img {
+  display: block;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
 }
 
 .list {
   list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* header */
+.header-border {
+  border-bottom: 1px solid var(--primary-border-color);
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+}
 
 .logo-header {
   text-decoration: none;
@@ -31,10 +55,23 @@ body {
   font-size: 26px;
   line-height: 1.19;
   color: var(--primary-logo-text-color);
+  display: inline-block;
+  margin: 24px 0 25px 0;
 }
 .logo-firstpart {
   color: var(--accent-color);
 }
+.site-nav,
+.contacts {
+  display: flex;
+}
+.site-nav {
+  margin-left: 93px;
+}
+.list-item + .list-item {
+  margin-left: 50px;
+}
+
 .navigation-link {
   text-decoration: none;
 
@@ -54,6 +91,9 @@ body {
 .contacts .navigation-link {
   color: var(--primary-text-color);
 }
+.contacts {
+  margin-left: auto;
+}
 .contacts .navigation-link:hover,
 .contacts .navigation-link:focus {
   color: var(--accent-color);
@@ -61,6 +101,8 @@ body {
 /* main-hero */
 .section-hero {
   background-color: var(--secondary-background-color);
+  margin: 0 0 94px 0;
+  padding: 200px 0;
 }
 .hero-title {
   font-weight: 900;
@@ -70,6 +112,9 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--secondary-text-color);
+
+  margin-top: 0px;
+  margin-bottom: 30px;
 }
 .button {
   font-family: inherit;
@@ -81,48 +126,99 @@ body {
   background-color: var(--accent-color);
   color: var(--secondary-text-color);
   cursor: pointer;
+
+  border-radius: 4px;
+  padding: 10px 32px;
+  border: 1px transparent;
+  margin: auto;
 }
+
 /* main-features */
+.section-features {
+  margin: 0 0 94px 0;
+}
 .hidden {
   overflow: hidden;
   width: 1px;
   height: 1px;
   opacity: 0;
+
+  padding: 0px;
+  margin: 0px;
+}
+.features-list {
+  display: flex;
 }
 .features-item {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   color: var(--title-text-color);
+
+  margin: 0 0 10px 0;
+  padding: 0px;
 }
 .features-description {
   font-size: 14px;
   line-height: 1.71;
+
+  margin: 0px;
+  padding: 0px;
 }
 /* main-activities */
+.section-activities {
+  margin: 0 0 94px 0;
+}
+.activities {
+  display: flex;
+}
+.activities-item + .activities-item {
+  margin-left: 30px;
+}
 .activities-team-title {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   color: var(--title-text-color);
+
+  margin: 0 0 50px 0;
 }
 
 /* main-our-team */
 .section-team {
   background-color: var(--additional-background-color);
+  padding: 94px 0;
+}
+.team {
+  background-color: var(--primary-background-color);
+  width: 270px;
+  display: flex;
+}
+
+.team-item {
+  background-color: var(--primary-background-color);
+}
+.team-item + .team-item {
+  margin-left: 30px;
+}
+.team-description {
+  margin: 30px auto;
 }
 .team-name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
-
   color: var(--title-text-color);
+
+  margin: 0 0 10px 0;
 }
 .profession {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+
+  margin: 0px;
 }
 
 /* footer */
@@ -137,11 +233,15 @@ footer {
   line-height: 1.19;
   color: var(--secondary-text-color);
 }
+.footer-item + .footer-item {
+  margin-top: 9px;
+}
 .address-item {
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
   color: var(--secondary-text-color);
+  margin: 0px;
 }
 .footer-contacts {
   text-decoration: none;
@@ -156,9 +256,25 @@ footer {
 .footer-contacts:focus {
   color: var(--accent-color);
 }
+
+.footer-sizing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.logo-footer {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
 /* стили для portfolio.html */
 
 /* catalog buttons */
+.catalog {
+  display: flex;
+  margin: 0 280px 34px 280px;
+  padding-bottom: 16px;
+  justify-content: space-between;
+}
 .catalog-button {
   background-color: var(--additional-background-color);
   font-family: inherit;
@@ -167,7 +283,13 @@ footer {
   line-height: 1.62;
   color: var(--title-text-color);
   cursor: pointer;
+
+  border-radius: 4px;
+  padding: 6px 22px;
+  border: 1px transparent;
+  height: 38px;
 }
+
 .catalog-button:hover,
 .catalog-button:focus,
 .catalog-button:active {
@@ -175,18 +297,55 @@ footer {
   color: var(--secondary-text-color);
 }
 
+.button-one {
+  min-width: 73px;
+}
+.button-two {
+  min-width: 128px;
+}
+.button-three {
+  min-width: 145px;
+}
+.button-four {
+  min-width: 103px;
+}
+.button-five {
+  min-width: 130px;
+}
+
 /* examples */
+.examples-section {
+  margin: 94px auto;
+}
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.examples-item {
+  flex-basis: calc(100% / 3 -30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
 .examples-title {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
+
+  margin: 0;
+  margin-bottom: 4px;
 }
 .examples .item {
   font-size: 16px;
   line-height: 1.87;
+
+  margin: 0;
 }
 
-/* body {     
-  margin:0;
-} */
+.examples-dscr {
+  border: 1px solid var(--secondary-border-color);
+  border-top: 0px transparent;
+  padding: 20px 24px;
+}
